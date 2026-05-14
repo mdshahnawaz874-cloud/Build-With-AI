@@ -1,0 +1,367 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Contact" 
+  description="Get in touch with questions, collaboration ideas, or just to say hi"
+>
+  <div class="contact-page">
+    <div class="container">
+      <header class="page-header fade-in-up">
+        <h1>Let's Connect</h1>
+        <p class="page-subtitle">
+          Have a question? Want to collaborate? Just want to say hi? I'd love to hear from you.
+        </p>
+      </header>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-section fade-in-up stagger-1">
+          <h2>Send a Message</h2>
+          <form class="contact-form" action="https://formspree.io/f/maqvlowp" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="mdshahnawazhussain32@gmail.com">
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" required>
+                <option value="">Choose a topic</option>
+                <option value="question">Question about a post</option>
+                <option value="collaboration">Collaboration opportunity</option>
+                <option value="feedback">Feedback or suggestion</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Your message..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+
+          <p class="form-note">
+            I typically respond within 24-48 hours. For urgent matters, reach out on Twitter.
+          </p>
+        </div>
+
+        <!-- Quick Contact Options -->
+        <div class="contact-options fade-in-up stagger-2">
+          <h2>Other Ways to Reach Me</h2>
+
+          <div class="option-card">
+            <div class="option-icon">💬</div>
+            <h3>Twitter</h3>
+            <p>Best for quick questions or discussions</p>
+            <a href="https://twitter.com/yourusername" target="_blank" class="option-link">
+              @yourusername →
+            </a>
+          </div>
+
+          <div class="option-card">
+            <div class="option-icon">💼</div>
+            <h3>LinkedIn</h3>
+            <p>For professional inquiries and networking</p>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" class="option-link">
+              Connect on LinkedIn →
+            </a>
+          </div>
+
+          <div class="option-card">
+            <div class="option-icon">💻</div>
+            <h3>GitHub</h3>
+            <p>Check out my code and projects</p>
+            <a href="https://github.com/yourusername" target="_blank" class="option-link">
+              View GitHub Profile →
+            </a>
+          </div>
+
+          <div class="option-card">
+            <div class="option-icon">✉️</div>
+            <h3>Email</h3>
+            <p>Direct email for longer discussions</p>
+            <a href="mailto:mdshahnawazhussain32@gmail.com" class="option-link">
+              mdshahnawazhussain32@gmail.com →
+            </a>
+          </div>
+
+          <div class="option-card highlight">
+            <div class="option-icon">📬</div>
+            <h3>Newsletter</h3>
+            <p>Weekly AI & productivity tips</p>
+            <form class="newsletter-mini" action="https://formspree.io/f/maqvlowp" method="POST">
+              <input type="email" name="email" placeholder="mdshahnawazhussain32@gmail.com" required>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="faq-section fade-in-up stagger-3">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Do you offer 1-on-1 consulting?</h3>
+            <p>
+              Not currently. I'm focusing on creating free content that helps as many students as possible. 
+              However, I do take on select freelance projects—reach out if you have something interesting!
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I use your code/templates?</h3>
+            <p>
+              Absolutely! Everything on this blog is open source. Check the GitHub repo for the full source code. 
+              Feel free to use, modify, and share—just give credit where it's due.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do you accept guest posts?</h3>
+            <p>
+              I'm open to collaborations with other students building cool projects. 
+              If you have a unique perspective or experiment to share, let's talk!
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do you monetize this blog?</h3>
+            <p>
+              Through affiliate marketing (only tools I actually use), digital products (templates & guides), 
+              and occasional sponsored content. I share all revenue numbers transparently in my monthly updates.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can you help with my project?</h3>
+            <p>
+              I can't provide free consulting, but I do answer questions in blog comments and on Twitter. 
+              For detailed help, consider booking a paid session or joining my upcoming course.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why don't you respond to every email?</h3>
+            <p>
+              I get more emails than I can handle while balancing school and the blog. 
+              I prioritize specific questions, collaboration opportunities, and thoughtful messages. 
+              Generic questions are better asked in blog comments where others can benefit too!
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+.contact-page {
+  padding: var(--space-2xl) 0;
+}
+
+.page-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-top: var(--space-md);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-2xl);
+  max-width: 1200px;
+  margin: 0 auto var(--space-2xl);
+}
+
+/* Contact Form */
+.contact-form-section h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.contact-form {
+  background: var(--color-bg-secondary);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: var(--color-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-note {
+  margin-top: var(--space-md);
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+  font-style: italic;
+}
+
+/* Contact Options */
+.contact-options h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.option-card {
+  padding: var(--space-lg);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--space-md);
+  transition: all 0.3s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(0, 255, 136, 0.1);
+}
+
+.option-card.highlight {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(78, 205, 196, 0.05));
+  border-color: var(--color-primary);
+}
+
+.option-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.option-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-xs);
+}
+
+.option-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.option-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  margin-top: var(--space-xs);
+}
+
+.newsletter-mini {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.newsletter-mini input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.newsletter-mini button {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+}
+
+/* FAQ Section */
+.faq-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-2xl) 0;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.faq-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.faq-item {
+  padding: var(--space-lg);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--color-primary);
+}
+
+.faq-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+}
+
+.faq-item p {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .newsletter-mini {
+    flex-direction: column;
+  }
+}
+</style>

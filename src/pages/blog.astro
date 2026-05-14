@@ -1,0 +1,546 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// In a real implementation, these would come from a content collection
+// For now, we'll use static data
+const posts = [
+  {
+    slug: 'how-i-built-this-blog',
+    title: 'How I Built This Blog for Free (Complete Tech Stack)',
+    description: 'A step-by-step guide to building a modern, high-performance blog using Astro, Netlify, and zero monthly costs.',
+    date: 'May 8, 2026',
+    readTime: '12 min read',
+    tag: 'Tutorial',
+    featured: true
+  },
+  {
+    slug: 'chatgpt-prompts-save-time',
+    title: '5 ChatGPT Prompts That Save Me 10 Hours Every Week',
+    description: 'The exact prompts I use for research, writing, and coding. Includes before/after examples and time tracking data.',
+    date: 'May 5, 2026',
+    readTime: '7 min read',
+    tag: 'Productivity'
+  },
+  {
+    slug: 'notion-personal-crm',
+    title: 'Building a Personal CRM in Notion (Free Template)',
+    description: 'Track job applications, freelance clients, and networking contacts in one place. Includes my actual template.',
+    date: 'May 2, 2026',
+    readTime: '10 min read',
+    tag: 'Tutorial'
+  }
+];
+---
+
+<Layout title="Blog" description="Practical AI tools, productivity strategies, and career advice for ambitious students">
+  <div class="blog-page">
+    <div class="container">
+      <!-- Page Header -->
+      <header class="page-header fade-in-up">
+        <h1>Blog</h1>
+        <p class="page-subtitle">
+          Practical AI tools, productivity strategies, and career advice tested with real student constraints: limited time, limited budget, zero room for expensive mistakes.
+        </p>
+      </header>
+
+      <!-- Topics Filter -->
+      <div class="topics-filter fade-in-up stagger-1">
+        <button class="topic-btn active" data-filter="all">All Posts</button>
+        <button class="topic-btn" data-filter="tutorial">Tutorials</button>
+        <button class="topic-btn" data-filter="productivity">Productivity</button>
+        <button class="topic-btn" data-filter="case-study">Case Studies</button>
+        <button class="topic-btn" data-filter="career">Career</button>
+        <button class="topic-btn" data-filter="ai">AI & Automation</button>
+      </div>
+
+      <!-- Featured Post -->
+      <section class="featured-section fade-in-up stagger-2">
+        <div class="featured-label">
+          <span class="star">★</span> Featured Post
+        </div>
+        <article class="featured-post">
+          <div class="featured-content">
+            <div class="post-meta">
+              <span class="post-tag">{posts[0].tag}</span>
+              <span class="post-date">{posts[0].date}</span>
+              <span class="post-read-time">• {posts[0].readTime}</span>
+            </div>
+            <h2><a href={`/blog/${posts[0].slug}`}>{posts[0].title}</a></h2>
+            <p>{posts[0].description}</p>
+            <a href={`/blog/${posts[0].slug}`} class="read-more">Read Full Post →</a>
+          </div>
+          <div class="featured-visual">
+            <div class="visual-placeholder">
+              <div class="code-snippet">
+                <div class="code-line"></div>
+                <div class="code-line short"></div>
+                <div class="code-line"></div>
+                <div class="code-line short"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- All Posts Grid -->
+      <section class="posts-section fade-in-up stagger-3">
+        <h2>All Posts</h2>
+        
+        <div class="posts-grid">
+          {posts.map((post) => (
+            <article class="post-card">
+              <div class="post-meta">
+                <span class="post-tag">{post.tag}</span>
+                <span class="post-date">{post.date}</span>
+              </div>
+              <h3><a href={`/blog/${post.slug}`}>{post.title}</a></h3>
+              <p>{post.description}</p>
+              <div class="post-footer">
+                <span class="read-time">{post.readTime}</span>
+                <a href={`/blog/${post.slug}`} class="read-more">Read Post →</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Newsletter CTA -->
+      <section class="newsletter-cta fade-in-up">
+        <div class="cta-content">
+          <h2>Never Miss a Post</h2>
+          <p>Get weekly AI & productivity tips delivered every Sunday. Join 500+ students.</p>
+          <form class="newsletter-form" action="https://formspree.io/f/maqvlowp" method="POST">
+            <input type="email" name="email" placeholder="mdshahnawazhussain32@gmail.com" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <p class="form-note">No spam. Unsubscribe anytime.</p>
+        </div>
+      </section>
+
+      <!-- Topics Overview -->
+      <section class="topics-overview fade-in-up">
+        <h2>Browse by Topic</h2>
+        
+        <div class="topics-grid">
+          <a href="/blog?tag=ai" class="topic-card">
+            <div class="topic-icon">🤖</div>
+            <h3>AI & Automation</h3>
+            <p>ChatGPT, Claude, and AI tools for productivity</p>
+            <span class="post-count">8 posts</span>
+          </a>
+
+          <a href="/blog?tag=productivity" class="topic-card">
+            <div class="topic-icon">⚡</div>
+            <h3>Productivity</h3>
+            <p>Systems, workflows, and time management</p>
+            <span class="post-count">12 posts</span>
+          </a>
+
+          <a href="/blog?tag=career" class="topic-card">
+            <div class="topic-icon">💼</div>
+            <h3>Career Building</h3>
+            <p>Resumes, portfolios, and job search</p>
+            <span class="post-count">6 posts</span>
+          </a>
+
+          <a href="/blog?tag=tutorial" class="topic-card">
+            <div class="topic-icon">📚</div>
+            <h3>Tutorials</h3>
+            <p>Step-by-step guides with code and templates</p>
+            <span class="post-count">10 posts</span>
+          </a>
+
+          <a href="/blog?tag=case-study" class="topic-card">
+            <div class="topic-icon">📊</div>
+            <h3>Case Studies</h3>
+            <p>Real experiments with transparent metrics</p>
+            <span class="post-count">5 posts</span>
+          </a>
+
+          <a href="/blog?tag=finance" class="topic-card">
+            <div class="topic-icon">💰</div>
+            <h3>Finance & Income</h3>
+            <p>Side hustles, monetization, and income reports</p>
+            <span class="post-count">4 posts</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+.blog-page {
+  padding: var(--space-2xl) 0;
+}
+
+.page-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-top: var(--space-md);
+}
+
+/* Topics Filter */
+.topics-filter {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2xl);
+}
+
+.topic-btn {
+  padding: 0.5rem 1.25rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.topic-btn:hover,
+.topic-btn.active {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+}
+
+/* Featured Section */
+.featured-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.featured-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: 50px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.star {
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.featured-post {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(78, 205, 196, 0.05));
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  align-items: center;
+}
+
+.featured-content h2 {
+  font-size: 2rem;
+  margin: var(--space-md) 0;
+}
+
+.featured-content h2 a {
+  color: var(--color-text);
+}
+
+.featured-content h2 a:hover {
+  color: var(--color-primary);
+}
+
+.featured-content p {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.featured-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-placeholder {
+  width: 100%;
+  height: 250px;
+  background: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  padding: var(--space-lg);
+}
+
+.code-snippet {
+  width: 100%;
+}
+
+.code-line {
+  height: 12px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
+  margin-bottom: var(--space-sm);
+  border-radius: 3px;
+  animation: codeGlow 3s ease-in-out infinite;
+}
+
+.code-line.short {
+  width: 70%;
+}
+
+@keyframes codeGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Posts Section */
+.posts-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.posts-section h2 {
+  margin-bottom: var(--space-xl);
+  font-size: 2rem;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+.post-card {
+  padding: var(--space-lg);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(0, 255, 136, 0.1);
+}
+
+.post-meta {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.post-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.post-date,
+.post-read-time {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+}
+
+.post-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.post-card h3 a {
+  color: var(--color-text);
+}
+
+.post-card h3 a:hover {
+  color: var(--color-primary);
+}
+
+.post-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.read-time {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+}
+
+.read-more {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-primary);
+}
+
+/* Newsletter CTA */
+.newsletter-cta {
+  padding: var(--space-2xl);
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(78, 205, 196, 0.05));
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.cta-content h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.cta-content p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: var(--space-sm);
+  max-width: 500px;
+  margin: 0 auto var(--space-sm);
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  background: var(--color-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.form-note {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+/* Topics Overview */
+.topics-overview h2 {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  font-size: 2rem;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.topic-card {
+  padding: var(--space-xl);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  text-align: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.topic-card::after {
+  display: none;
+}
+
+.topic-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(0, 255, 136, 0.1);
+}
+
+.topic-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.topic-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.topic-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.post-count {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-primary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .featured-post {
+    grid-template-columns: 1fr;
+  }
+  
+  .visual-placeholder {
+    height: 150px;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+// Topic filter functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.topic-btn');
+  const posts = document.querySelectorAll('.post-card');
+  
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Update active state
+      buttons.forEach(b => b.classList.remove('active'));
+      button.classList.add('active');
+      
+      // Filter posts (in a real app, this would filter based on data attributes)
+      const filter = button.getAttribute('data-filter');
+      console.log('Filtering by:', filter);
+      // Implementation would filter posts here
+    });
+  });
+});
+</script>

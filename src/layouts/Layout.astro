@@ -1,0 +1,300 @@
+---
+import '../styles/global.css';
+
+const { title = 'Build With AI', description = 'Practical AI tools and strategies for students who want to work smarter, learn faster, and build real projects' } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <meta name="generator" content={Astro.generator}>
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <title>{title} | Build With AI</title>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-content">
+        <a href="/" class="logo">
+          <span class="logo-text">Build With AI</span>
+          <span class="logo-accent">_</span>
+        </a>
+        
+        <div class="nav-links">
+          <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
+          <a href="/blog" class={currentPath.startsWith('/blog') ? 'active' : ''}>Blog</a>
+          <a href="/about" class={currentPath === '/about' ? 'active' : ''}>About</a>
+          <a href="/contact" class={currentPath === '/contact' ? 'active' : ''}>Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Build With AI</h3>
+          <p>Practical AI tools and strategies for ambitious students. Built by a student, for students.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="/blog?tag=ai">AI & Automation</a></li>
+            <li><a href="/blog?tag=productivity">Productivity</a></li>
+            <li><a href="/blog?tag=career">Career Building</a></li>
+            <li><a href="/blog?tag=finance">Finance</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://twitter.com/yourusername" target="_blank" rel="noopener">Twitter</a></li>
+            <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="/rss.xml">RSS Feed</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Build With AI. Built with <a href="https://astro.build" target="_blank">Astro</a>.</p>
+        <p class="footer-stats">
+          <span class="stat">PageSpeed: 95+</span>
+          <span class="stat-separator">•</span>
+          <span class="stat">Free & Open Source</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style>
+/* Navigation */
+.nav {
+  position: sticky;
+  top: 0;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-sm) 0;
+  z-index: 1000;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.logo::after {
+  display: none;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-accent {
+  color: var(--color-primary);
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 49%, 100% { opacity: 1; }
+  50%, 99% { opacity: 0; }
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  display: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--color-primary);
+}
+
+.nav-links a.active::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+/* Footer */
+.footer {
+  background: var(--color-bg-secondary);
+  margin-top: var(--space-2xl);
+  padding: var(--space-2xl) 0 var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.footer-col h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+}
+
+.footer-col h4 {
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  color: var(--color-text-tertiary);
+  max-width: 30ch;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: var(--space-xs);
+}
+
+.footer-col ul li a {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.footer-col ul li a:hover {
+  color: var(--color-primary);
+}
+
+.footer-bottom {
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+.footer-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.stat {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-primary);
+}
+
+.stat-separator {
+  color: var(--color-text-tertiary);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: var(--space-md);
+  }
+  
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>

@@ -1,0 +1,595 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text fade-in-up">
+          <div class="eyebrow">Welcome to</div>
+          <h1 class="hero-title">
+            <span class="gradient-text">Build With AI</span>
+          </h1>
+          <p class="hero-description fade-in-up stagger-1">
+            Practical AI tools and strategies that help ambitious students automate busywork, learn faster, and build revenue-generating side projects—no CS degree required.
+          </p>
+          <div class="hero-cta fade-in-up stagger-2">
+            <a href="/blog" class="btn btn-primary">Read the Blog</a>
+            <a href="/about" class="btn btn-secondary">About This Project</a>
+          </div>
+        </div>
+        
+        <div class="hero-visual fade-in-up stagger-3">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number" data-target="95">0</div>
+              <div class="stat-label">PageSpeed Score</div>
+              <div class="stat-bar"><div class="stat-fill" style="width: 95%"></div></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="24">0</div>
+              <div class="stat-label">Posts Published</div>
+              <div class="stat-bar"><div class="stat-fill" style="width: 80%"></div></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="100">0</div>
+              <div class="stat-label">% Transparent</div>
+              <div class="stat-bar"><div class="stat-fill" style="width: 100%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-decoration">
+      <div class="decoration-grid"></div>
+    </div>
+  </section>
+
+  <!-- Value Proposition -->
+  <section class="value-prop">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2>Why This Blog Exists</h2>
+        <p>Most productivity advice is written by people with unlimited time and money. This is different.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card fade-in-up stagger-1">
+          <div class="feature-icon">🎓</div>
+          <h3>Student Perspective</h3>
+          <p>Written by someone solving the same problems you face. Real constraints: 2-3 hours/week, student budget.</p>
+        </div>
+        
+        <div class="feature-card fade-in-up stagger-2">
+          <div class="feature-icon">📊</div>
+          <h3>Transparent Metrics</h3>
+          <p>Every experiment includes real data. Traffic numbers, revenue, time saved—no BS, no hiding failures.</p>
+        </div>
+        
+        <div class="feature-card fade-in-up stagger-3">
+          <div class="feature-icon">💰</div>
+          <h3>Free-First Philosophy</h3>
+          <p>Only recommend paid tools when they deliver clear ROI. Most tutorials use $0-20/month in tools.</p>
+        </div>
+        
+        <div class="feature-card fade-in-up stagger-4">
+          <div class="feature-icon">🚀</div>
+          <h3>Resume-Ready Projects</h3>
+          <p>Every tutorial designed to build portfolio pieces you can showcase to employers or clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Posts -->
+  <section class="featured-posts">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2>Latest Posts</h2>
+        <a href="/blog" class="view-all">View All →</a>
+      </div>
+      
+      <div class="posts-grid">
+        <article class="post-card featured fade-in-up stagger-1">
+          <div class="post-meta">
+            <span class="post-tag">Tutorial</span>
+            <span class="post-date">5 min read</span>
+          </div>
+          <h3><a href="/blog/how-i-built-this-blog">How I Built This Blog for Free (Complete Tech Stack)</a></h3>
+          <p>A step-by-step guide to building a modern, high-performance blog using Astro, Netlify, and $0 in monthly costs. Includes full source code and deployment instructions.</p>
+          <div class="post-footer">
+            <span class="read-time">May 8, 2026</span>
+            <a href="/blog/how-i-built-this-blog" class="read-more">Read Post →</a>
+          </div>
+        </article>
+        
+        <article class="post-card fade-in-up stagger-2">
+          <div class="post-meta">
+            <span class="post-tag">Productivity</span>
+            <span class="post-date">7 min read</span>
+          </div>
+          <h3><a href="/blog/chatgpt-prompts-save-time">5 ChatGPT Prompts That Save Me 10 Hours Every Week</a></h3>
+          <p>The exact prompts I use for research, writing, and coding. Includes before/after examples and time tracking data.</p>
+          <div class="post-footer">
+            <span class="read-time">May 5, 2026</span>
+            <a href="/blog/chatgpt-prompts-save-time" class="read-more">Read Post →</a>
+          </div>
+        </article>
+        
+        <article class="post-card fade-in-up stagger-3">
+          <div class="post-meta">
+            <span class="post-tag">Case Study</span>
+            <span class="post-date">10 min read</span>
+          </div>
+          <h3><a href="/blog/notion-personal-crm">Building a Personal CRM in Notion (Free Template)</a></h3>
+          <p>Track job applications, freelance clients, and networking contacts in one place. Includes my actual template and workflow.</p>
+          <div class="post-footer">
+            <span class="read-time">May 2, 2026</span>
+            <a href="/blog/notion-personal-crm" class="read-more">Read Post →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="newsletter-cta">
+    <div class="container">
+      <div class="cta-content fade-in-up">
+        <div class="cta-text">
+          <h2>Get weekly AI & productivity tips</h2>
+          <p>Join 500+ students getting practical strategies delivered every Sunday. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="newsletter-form" action="https://formspree.io/f/maqvlowp" method="POST">
+          <input type="email" name="email" placeholder="mdshahnawazhussain32@gmail.com" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+/* Hero Section */
+.hero {
+  padding: var(--space-2xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-sm);
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: var(--space-md);
+  line-height: 1;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-2) 50%, var(--color-accent-4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 5s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.875rem 1.75rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn::after {
+  display: none;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dim);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+}
+
+.btn-secondary {
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-primary);
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.stat-card {
+  background: var(--color-bg-secondary);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color-primary);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.stat-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent-2));
+  transition: width 1.5s ease-out;
+  animation: fillBar 2s ease-out forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+}
+
+/* Hero Decoration */
+.hero-decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+.decoration-grid {
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 136, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.3) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: moveGrid 20s linear infinite;
+}
+
+@keyframes moveGrid {
+  from { transform: translate(0, 0); }
+  to { transform: translate(30px, 30px); }
+}
+
+/* Value Proposition */
+.value-prop {
+  padding: var(--space-2xl) 0;
+  background: var(--color-bg-secondary);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.section-header p {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.feature-card {
+  padding: var(--space-lg);
+  background: var(--color-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(0, 255, 136, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+/* Featured Posts */
+.featured-posts {
+  padding: var(--space-2xl) 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.view-all {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-primary);
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.post-card {
+  padding: var(--space-lg);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+.post-card.featured {
+  grid-column: span 1;
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(78, 205, 196, 0.05));
+  border-color: var(--color-primary);
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.post-meta {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.post-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.post-date {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+}
+
+.post-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.post-card h3 a {
+  color: var(--color-text);
+}
+
+.post-card h3 a:hover {
+  color: var(--color-primary);
+}
+
+.post-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.read-time {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+}
+
+.read-more {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-primary);
+}
+
+/* Newsletter CTA */
+.newsletter-cta {
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(78, 205, 196, 0.05));
+}
+
+.cta-content {
+  background: var(--color-bg-secondary);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-primary);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.cta-text h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.cta-text p {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  background: var(--color-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-content,
+  .cta-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero {
+    padding: var(--space-xl) 0;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
+</style>
+
+<script>
+// Animated number counter for stats
+function animateNumbers() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  
+  statNumbers.forEach(stat => {
+    const target = parseInt(stat.getAttribute('data-target'));
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      stat.textContent = Math.floor(current);
+    }, 16);
+  });
+}
+
+// Run animation when page loads
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', animateNumbers);
+} else {
+  animateNumbers();
+}
+</script>
